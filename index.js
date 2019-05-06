@@ -6,6 +6,19 @@ const app = express();
 app.set('port', (process.env.PORT || 3000));
 
 app.get('/', function(req, res) {
+  const url = req.hostname;
+  const message = `<h1>GitHub API for commit count</h1>
+    <p>
+      <a href="https://github.com/9sako6/github-api-for-commit-count">9sako6/github-api-for-commit-count</a>
+    </p>
+    <h2>How to use</h2>
+    <p>
+      ${url}/count?user=[username]&repo=[repository]
+    </p>`;
+  res.send(message);
+});
+
+app.get('/count', function(req, res) {
   const user = req.query.user || '';
   const repo = req.query.repo || '';
 

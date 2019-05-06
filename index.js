@@ -6,7 +6,7 @@ const app = express();
 app.set('port', (process.env.PORT || 3000));
 
 app.get('/', function(req, res) {
-  const url = req.hostname;
+  const url = req.protocol + '://' +req.hostname;
   const message = `<h1>GitHub API for commit count</h1>
     <p>
       <a href="https://github.com/9sako6/github-api-for-commit-count">9sako6/github-api-for-commit-count</a>

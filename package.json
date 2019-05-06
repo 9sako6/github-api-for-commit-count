@@ -1,0 +1,27 @@
+{
+  "name": "github-api-for-commit-count",
+  "version": "0.1.0",
+  "description": "GitHub API to get commit count",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9sako6/github-api-for-commit-count.git"
+  },
+  "keywords": [
+    "GitHub",
+    "API"
+  ],
+  "author": "9sako6",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/9sako6/github-api-for-commit-count/issues"
+  },
+  "homepage": "https://github.com/9sako6/github-api-for-commit-count#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}

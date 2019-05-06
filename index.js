@@ -5,6 +5,14 @@ const app = express();
 
 app.set('port', (process.env.PORT || 3000));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+  next();
+});
+
 app.get('/', function(req, res) {
   const url = req.protocol + '://' +req.hostname;
   const message = `<h1>GitHub API for commit count</h1>

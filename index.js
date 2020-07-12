@@ -41,9 +41,12 @@ app.get('/count', function(req, res) {
       return;
     }
     try {
-      const commitsElem = body.match(/<span class="num text-emphasized">([^>]+)<\/span>/)[1].trim();
-      const commitNum = commitsElem.replace(/,/, '');
-      res.send(commitNum); 
+      
+      const commitNum = body
+        .replace(/\r?\n/g, '')
+        .match(/<span class="d-none d-sm-inline">[\s\t]*<strong>([\d,]+)/)[1]
+        .replace(/,/, '');
+      res.send(commitNum);
     } catch(error) {
       console.error(error);
       res.status(500).end();
